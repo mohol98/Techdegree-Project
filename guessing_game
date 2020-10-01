@@ -1,0 +1,26 @@
+import random
+
+def start_game():
+    
+    print("Hello and welcome to the number guessing game!")
+    solution = random.randrange(0,10,1)
+    count = 0
+    guessinput = input("What is your lucky guess?        ")
+    guess = int(guessinput)
+    
+    while guess != solution:
+        count += 1
+        
+        if guess > solution:
+            print("It's lower, try again!")
+            guessinput = input("What is your lucky guess?        ")
+            guess = int(guessinput)
+        elif guess < solution:
+            print("It's higher, please try again")
+            guessinput = input("What is your lucky guess?        ")
+            guess = int(guessinput)
+    else:
+            
+        print("Got it! It took you {} attempts! This game is done, come back to try again!".format(count))
+    
+start_game()
