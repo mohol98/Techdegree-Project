@@ -9,10 +9,6 @@ def start_game():
     try:
         guessinput = input("What is your lucky guess?        ")
         guess = int(guessinput)
-    except ValueError as err:
-        print("Value must be an integer from 1-10")
-        print("({})".format(err))
-    else:
         while guess != solution:
             count += 1
             if guess > solution:
@@ -23,8 +19,12 @@ def start_game():
                 print("It's higher, please try again")
                 guessinput = input("What is your lucky guess?        ")
                 guess = int(guessinput)
-        else:
-                
-            print("Got it! It took you {} attempts! This game is done, come back to try again!".format(count))
+    
+    except ValueError as err:
+        print("Value must be an integer from 1-10")
+        print("({})".format(err))
+    
+    else:
+        print("Got it! It took you {} attempts! This game is done, come back to try again!".format(count))
 
 start_game()
